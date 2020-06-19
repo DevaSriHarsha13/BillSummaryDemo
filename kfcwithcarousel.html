@@ -1,0 +1,424 @@
+<head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js">
+    </script>
+    <style>
+        label
+        {
+            font-size:25px;
+            margin-left:30px;
+        }
+        .row
+        {
+            margin-top:15px;
+        }
+        
+    </style>
+    <script type="text/javascript">
+       function getdetails()
+       {
+           var name=document.getElementById("customertext");
+           var mobile=document.getElementById("customermobile");
+
+           var OptChickenRiceBowl=document.getElementById("OptChickenRiceBowl");
+           var OptPopcornRiceDuo=document.getElementById("OptPopcornRiceDuo");
+           var OptVegRiceBowl=document.getElementById("OptVegRiceBowl");
+
+           var OptBurger=document.getElementById("OptBurger");
+           var OptPizza=document.getElementById("OptPizza");
+           var OptFries=document.getElementById("OptFries");
+           var OptChickenPopcorn=document.getElementById("OptChickenPopcorn");
+
+           var OptRedbull=document.getElementById("OptRedbull");
+           var OptPepsi=document.getElementById("OptPepsi");
+
+           var OptChocoKrusher=document.getElementById("OptChocoKrusher");
+           var OptStrawberryKrusher=document.getElementById("OptStrawberryKrusher");
+           var OptVanillaKrusher=document.getElementById("OptVanillaKrusher");
+
+           var customername=name.value;
+           var customermobile=mobile.value;
+           
+
+           var mealname="";
+           var snacksname="";
+           var Beveragename="";
+           var krushername="";
+           var mealcost=0;
+           var snackscost=0;
+           var beveragecost=0;
+           var krushercost=0;
+           var total=0;
+
+           if(OptChickenRiceBowl.checked)
+           {
+               mealname=OptChickenRiceBowl.value;
+               mealcost=210;
+           }
+           if(OptPopcornRiceDuo.checked)
+           {
+               mealname=OptPopcornRiceDuo.value;
+               mealcost=240;
+           }
+           if(OptVegRiceBowl.checked)
+           {
+               mealname=OptVegRiceBowl.value;
+               mealcost=170;
+           }
+           if(OptBurger.checked)
+           {
+               snacksname=OptBurger.value;
+               snackscost=120;
+           }
+           if(OptPizza.checked)
+           {
+               snacksname=OptPizza.value;
+               snackscost=145;
+           }
+           if(OptFries.checked)
+           {
+               snacksname=OptFries.value;
+               snackscost=60;
+           }
+           if(OptChickenPopcorn.checked)
+           {
+               snacksname=OptChickenPopcorn.value;
+               snackscost=115;
+           }
+           total=mealcost+snackscost;
+           if(OptRedbull.checked)
+           {
+               Beveragename+=OptRedbull.value+"<br>";
+               beveragecost=90;
+               total+=beveragecost;
+           }
+           if(OptPepsi.checked)
+           {
+               Beveragename+=OptPepsi.value+"<br>";
+               beveragecost=85;
+               total+=beveragecost;
+           }
+           if(OptChocoKrusher.checked)
+           {
+               krushername=OptChocoKrusher.value;
+               krushercost=40;
+               total+=krushercost;
+           }
+           if(OptStrawberryKrusher.checked)
+           {
+               krushername=OptStrawberryKrusher.value;
+               krushercost=45;
+               total+=krushercost;
+           }
+           if(OptVanillaKrusher.checked)
+           {
+               krushername=OptVanillaKrusher.value;
+               krushercost=55;
+               total+=krushercost;
+           }
+           document.getElementById("nameinbill").innerHTML=customername;
+           document.getElementById("mobileinbill").innerHTML=customermobile;
+           document.getElementById("mealinbill").innerHTML=mealname;
+           document.getElementById("snacksinbill").innerHTML=snacksname;
+           document.getElementById("beveragesinbill").innerHTML=Beveragename;
+           document.getElementById("krushersinbill").innerHTML=krushername;
+           document.getElementById("totalbill").innerHTML=total;
+
+
+           
+
+       }
+    </script>
+</head>
+<body class="container-fluid">
+    
+    <div class="carousel slide" id="carouselDemo" data-ride="carousel">
+        
+            <ul class="carousel-indicators">
+                <li data-target="#carouselDemo" data-slide-to="0"></li>
+                <li data-target="#carouselDemo" data-slide-to="1"></li>
+                <li data-target="#carouselDemo" data-slide-to="2"></li>
+            </ul>
+    
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../Images/kfcbucketbanner.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="../Images/KFCDoubles2banner.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="../Images/kfcwednesdaybanner.jpg" class="d-block w-100">
+            </div>
+        </div>
+        <a href="#carouselDemo" class="carousel-control-prev" data-slide="prev" role="button">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#carouselDemo" class="carousel-control-next" data-slide="next" role="button">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <div class="accordion" id="kfcmenu">
+        <div class="card">
+            <div class="card-header">
+                <button type="button" class="btn btn-danger btn-block"  data-toggle="collapse" data-target="#customercollapse">CustomerInfo</button>
+            </div>
+            <div class="collapse fade" id="customercollapse" data-parent="#kfcmenu">
+                <div class="card-body">
+                    <div class="row">
+                    <div class="col-6">
+                        <label>Name</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" id="customertext" name="customertext" class="form-control">
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                          <label>Mobile</label>
+                      </div>
+                      <div class="col-6">
+                          <input type="text" id="customermobile" name="customermobile" class="form-control">
+                      </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <button class="btn btn-danger btn-block" data-toggle="collapse" data-target="#collapseMeal">Choose Meal</button>
+            </div>
+            <div class="collapse" id="collapseMeal" data-parent="#kfcmenu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="../Images/kfcchickenricebowl.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Chicken Rice Bowl</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="radio" value="Chicken Rice Bowl" id="OptChickenRiceBowl" name="rice">&#8377; 210/-
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="card">
+                              <div class="card-header">
+                                  <img src="../Images/kfcpopcornriceduo.jpg">
+                              </div>
+                              <div class="card-body">
+                                  <h3>Chicken Popcorn Rice Bowl</h3>
+                              </div>
+                              <div class="card-footer">
+                                  <input type="radio" value="Popcorn Rice Duo" id="OptPopcornRiceDuo" name="rice">&#8377; 240/-
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-4">
+                          <div class="card">
+                              <div class="card-header">
+                                  <img src="../Images/kfcveg-rice-bowl.jpg">
+                              </div>
+                              <div class="card-body">
+                                  <h3>Veg Rice Bowl</h3>
+                              </div>
+                              <div class="card-footer">
+                                  <input type="radio" value="veg Rice Bowl" id="OptVegRiceBowl" name="rice">&#8377; 170/-
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+           <div class="card-header">
+              <button type="button" class="btn btn-danger btn-block" data-toggle="collapse" data-target="#collapsesnacks">Choose Snacks</button>
+           </div>
+           <div class="collapse" id="collapsesnacks" data-parent="#kfcmenu">
+             <div class="card-body">
+                 <div class="row">
+                     <div class="col-3">
+                         <div class="card">
+                             <div class="card-header">
+                                 <img src="../Images/kfcburger.jpg">
+                             </div>
+                             <div class="card-body">
+                                <h3>Chicken Burger</h3> 
+                             </div>
+                             <div class="card-footer">
+                                 <input type="radio" id="OptBurger" value="Chicken Burger" name="snacks">&nbsp;&#8377;120/-
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-3">
+                       <div class="card">
+                           <div class="card-header">
+                               <img src="../Images/kfcpizza.jfif" width="250px" height="235px">
+                           </div>
+                           <div class="card-body">
+                              <h3>Chicken Pizza</h3>
+                           </div>
+                           <div class="card-footer">
+                               <input type="radio" id="OptPizza" value="Chicken Pizza" name="snacks">&nbsp;&#8377;145/-
+                           </div>
+                       </div>
+                     </div>
+                     <div class="col-3">
+                      <div class="card">
+                          <div class="card-header">
+                              <img src="../Images/kfcfries.jpg" width="250px" height="235px">
+                          </div>
+                          <div class="card-body">
+                             <h3>Medium French Fries</h3>
+                          </div>
+                          <div class="card-footer">
+                              <input type="radio" id="OptFries" value="French Fries" name="snacks">&nbsp;&#8377; 60/-
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="card">
+                          <div class="card-header">
+                              <img src="../Images/kfcpopcorn.jpg" width="250px" height="235px">
+                          </div>
+                          <div class="card-body">
+                             <h3>Chicken Popcorn</h3>
+                          </div>
+                          <div class="card-footer">
+                              <input type="radio" id="OptChickenPopcorn" value="Chicken Popcorn" name="snacks">&nbsp;&#8377;115/-
+                          </div>
+                      </div>
+                    </div>
+                 </div>
+                 
+             </div>
+           </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <button class="btn btn-danger btn-block" data-toggle="collapse" data-target="#collapsebeverages">Beverage</button>
+            </div>
+            <div class="collapse" id="collapsebeverages" data-parent="#kfcmenu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="../Images/kfcredbullenergydrink.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Redbull Energy Drink 200 ml</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <input id="OptRedbull" value="Redbull Energy Drink" type="checkbox">&#8377; 90/-
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="../Images/kfcpepsi.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Pepsi 200ml Can</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <input  id="OptPepsi" value="Pepsi Can" type="checkbox">&nbsp;&#8377; 85/-
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <button class="btn btn-danger btn-block" data-toggle="collapse" data-target="#collapsekrusher">Krushers</button>
+            </div>
+            <div class="collapse" id="collapsekrusher" data-parent="#kfcmenu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="../Images/kfcmintchockrushers.jfif">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Choco Mint Krusher</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="radio" id="OptChocoKrusher" value="Choco Mint Krusher" name="krushers">&#8377; 40/-
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="card">
+                              <div class="card-header">
+                                  <img src="../Images/kfcstrawberrykrusher.jfif" height="205px" width="350px">
+                              </div>
+                              <div class="card-body">
+                                  <h3>Strawberry Krusher</h3>
+                              </div>
+                              <div class="card-footer">
+                                  <input type="radio" id="OptStrawberryKrusher" value="Strawberry Krusher" name="krushers">&#8377; 45/-
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="card">
+                              <div class="card-header">
+                                  <img src="../Images/kfcbluevanillakrusher.gif" height="205px" width="350px">
+                              </div>
+                              <div class="card-body">
+                                  <h3>Vanilla Blue Krusher</h3>
+                              </div>
+                              <div class="card-footer">
+                                  <input type="radio" id="OptVanillaKrusher" value="Vanilla Krusher" name="krushers">&#8377; 55/-
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+  <div align="center" style="margin-top:15px;">
+      <button onclick="getdetails()" class="btn btn-outline-danger btn-lg" data-toggle="modal" data-target="#summarymodal">Place order</button>
+  </div>
+  <div class="modal" id="summarymodal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title">Bill Summary</h3>
+              </div>
+              <div class="modal-body">
+                  <dl>
+                      <dt>Name</dt>
+                      <dd id="nameinbill"></dd>
+                      <dt>Mobile</dt>
+                      <dd id="mobileinbill"></dd>
+                      <dt>Meal</dt>
+                      <dd id="mealinbill"></dd>
+                      <dt>Snacks</dt>
+                      <dd id="snacksinbill"></dd>
+                      <dt>Beverages</dt>
+                      <dd id="beveragesinbill"></dd>
+                      <dt>Krushers</dt>
+                      <dd id="krushersinbill"></dd>
+                      <dt>Total Bill</dt>
+                      <dd id="totalbill"></dd>
+                  </dl>
+              </div>
+              <div class="modal-footer">
+                  <button align="right" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
