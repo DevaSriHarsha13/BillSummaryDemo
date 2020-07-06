@@ -4,6 +4,7 @@
        {
            var name=document.getElementById("customertext");
            var mobile=document.getElementById("customermobile");
+           var orderdate=document.getElementById("orderdate");
 
            var OptChickenRiceBowl=document.getElementById("OptChickenRiceBowl");
            var OptPopcornRiceDuo=document.getElementById("OptPopcornRiceDuo");
@@ -23,6 +24,7 @@
 
            var customername=name.value;
            var customermobile=mobile.value;
+           var date=orderdate.value;
            
 
            var mealname="";
@@ -103,11 +105,12 @@
            }
            document.getElementById("nameinbill").innerHTML=customername;
            document.getElementById("mobileinbill").innerHTML=customermobile;
+           document.getElementById("dateinbill").innerHTML=date;
            document.getElementById("mealinbill").innerHTML=mealname;
            document.getElementById("snacksinbill").innerHTML=snacksname;
            document.getElementById("beveragesinbill").innerHTML=Beveragename;
            document.getElementById("krushersinbill").innerHTML=krushername;
-           document.getElementById("totalbill").innerHTML=total;
+           document.getElementById("totalbill").innerHTML="&#8377;"+total+"/-";
 
 
            
